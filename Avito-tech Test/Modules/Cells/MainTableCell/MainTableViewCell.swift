@@ -86,8 +86,8 @@ final class MainTableCell: UITableViewCell {
     
     private func addSubviewsInView() {
         [nameLabel, phoneNumberLabel, skillsLabel].forEach { stackView.addArrangedSubview($0) }
-        self.addSubview(backgroundCellView)
         backgroundCellView.addSubview(stackView)
+        self.addSubview(backgroundCellView)
     }
     
     private func setupConstraint() {

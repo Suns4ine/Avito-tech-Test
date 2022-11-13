@@ -26,6 +26,7 @@ final class MainViewController: UIViewController {
         label.numberOfLines = 0
         label.textAlignment = .center
         label.textColor = .text
+        label.text = "Первичная загрузка данных"
         return label
     }()
     
@@ -64,10 +65,10 @@ final class MainViewController: UIViewController {
         view.backgroundColor = .backgroundController
         
         output.setupData()
+        
+        addSubviewsInView()
         setupTableView()
-        addSubviewsInView()
         setupConstraint()
-        addSubviewsInView()
     }
     
     //MARK: Private Methods
@@ -78,8 +79,7 @@ final class MainViewController: UIViewController {
     }
     
     private func addSubviewsInView() {
-        view.addSubview(tableView)
-        view.addSubview(emptyLabel)
+        [tableView, emptyLabel].forEach { view.addSubview($0) }
         tableView.addSubview(refreshControl)
     }
     
